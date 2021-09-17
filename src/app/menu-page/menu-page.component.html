@@ -1,0 +1,24 @@
+<div class="menu-card" *ngFor="let menus of menuItems">
+	<div *ngFor="let items of menus | keyvalue">
+		<details class="collapse">
+			<summary class="title">{{items.key}}</summary>
+			<hr class="divider">
+			<section id="menu">
+					<div class="menuItem-group" data-scroll-reveal>
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="menuItem" *ngFor="let item of items.value | keyvalue">
+									<img class="menuImage" src={{item.value.imageUrl}}>
+									<div class="menuCaption">
+										<span class="menuName">{{item.key}}</span>
+										<span class="menuDesc">{{item.value.description}}</span>
+										<span class="menuPrice">{{item.value.price}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</section>
+		</details>
+	</div>
+</div>
